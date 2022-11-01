@@ -1,6 +1,6 @@
 <div class="container">
     <h2> Ajout d'un employé</h2>
-    <form>
+    <form [formGroup]="employeForm" (ngSubmit)="onSubmitForm()">
         <div>
             <label> Donnez le matricule</label>
             <input type="number" class="form-control" formControlName="matricule">
@@ -20,11 +20,11 @@
 
         <div>
             <label> Choisissez le département</label>
-            <input type="radio" name="dep" value="IT" formControlName="departement"> IT
-            <input type="radio" name="dep" value="Finance" formControlName="departement"> Finance
+            <input type="radio" name="dep" value="IT" formControlName="dep"> IT
+            <input type="radio" name="dep" value="Finance" formControlName="dep"> Finance
         </div>
 
         <button class="btn btn-primary">Ajouter Employé</button>
-        <input type="button" class="btn btn-secondary" value="Vider">
+        <input type="button" class="btn btn-secondary" value="Vider" (click)="onReset()">
     </form>
 </div>
